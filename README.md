@@ -1,3 +1,4 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/771d82121b894f0193a09fe0deb60c93)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=carlosemmanueldev/gerenciamento-disciplinas&amp;utm_campaign=Badge_Grade)
 # Disciplinados - Sistema de Gerenciamento de Disciplinas
 ## :octocat: Integrantes
 [Carlos Emmanuel](https://github.com/carlosemmanueldev)
@@ -8,7 +9,7 @@ ministrado pelo Professor Dr. Rodrigo Andrade, da UFAPE, referente ao período d
 ajudar o professor a organizar as disciplinas que ele ministra, além de possibilitar o cadastro de alunos e atividades, 
 que contam com notas e comentários.
 
-*   [Site no Heroku](https) :robot:
+*   [Site no Heroku](https://quiet-waters-00056.herokuapp.com/) :robot:
 
 ## :round_pushpin: Objetivos
 O usuário deve ser capaz de fazer o cadastramento dos seus dados pessoais, tais como Nome Completo, e-mail, e uma senha 
