@@ -1,0 +1,16 @@
+<div class="row mt-5 pt-5">
+  <div class="col-md-6 text-center">
+    <%= image_tag("logo.png", width: "500px") %>
+  </div>
+
+  <div class="col-md-6 align-self-center text-center">
+    <h1>Cadastre-se</h1>
+    <%= render "form", user: @user %>
+
+    <br>
+
+    <div>
+      <%= link_to "Voltar", root_path, class: "text-light" %>
+    </div>
+  </div>
+</div>

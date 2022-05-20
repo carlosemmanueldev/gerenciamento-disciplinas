@@ -1,0 +1,33 @@
+<%= form_with(model: user, class: "d-flex flex-column align-items-center") do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> foram encontrados:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-3">
+    <%= form.text_field :name, placeholder: "Nome", class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+  <%= form.email_field :email, placeholder: "E-mail", class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+  <%= form.password_field :password, placeholder: "Senha", class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+  <%= form.password_field :password_confirmation, placeholder: "Confirme a senha", class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.submit id:"submit", class: "btn btn-orange" %>
+  </div>
+<% end %>
