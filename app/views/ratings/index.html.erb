@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h1>Avaliações</h1>
+
+  <%= link_to "Cadastrar avaliação", new_rating_path, :class => "btn btn-orange my-5" %>
+
+  <div id="ratings">
+    <% @ratings.each do |rating| %>
+      <div class="d-flex justify-content-center border m-2">
+        <div class="m-2">
+          <%= render rating %>
+        </div>
+
+        <div class="m-2">
+          <%= link_to "Ver avaliações", rating, :class => "btn btn-orange" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

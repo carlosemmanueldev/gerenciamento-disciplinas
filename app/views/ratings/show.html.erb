@@ -1,0 +1,10 @@
+<div class="text-center">
+  <%= render @rating %>
+
+  <div>
+    <%= link_to "Editar essa nota", edit_rating_path(@rating), :class => "btn btn-orange mx-2" %>
+    <%= link_to "Voltar", ratings_path, :class => "btn btn-orange mx-2" %>
+
+    <%= button_to "Apagar nota", @rating, method: :delete, :class => "btn btn-danger mt-5" %>
+  </div>
+</div>

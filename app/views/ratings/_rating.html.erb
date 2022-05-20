@@ -1,0 +1,38 @@
+<div id="<%= dom_id rating %>">
+
+  <p>
+    <strong>Atividade:</strong>
+    <%= rating.lesson.title %>
+  </p>
+
+  <p>
+    <strong>Nota:</strong>
+    <%= rating.grade %>
+  </p>
+
+  <p>
+    <strong>Descrição:</strong>
+    <%= rating.description %>
+  </p>
+
+  <p>
+    <strong>Estudante:</strong>
+    <%= rating.student.name %>
+  </p>
+
+  <p>
+    <strong>Bimestre:</strong>
+    <%= rating.lesson.bimester %>º
+  </p>
+
+  <p>
+    <strong>Disciplina:</strong>
+    <%= rating.lesson.subject.name %>
+  </p>
+
+  <p>
+    <strong>Turma:</strong>
+    <%= rating.student.classroom.name %>
+  </p>
+
+</div>
