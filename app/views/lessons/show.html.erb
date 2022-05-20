@@ -1,0 +1,10 @@
+<div class="text-center">
+  <%= render @lesson %>
+
+  <div>
+    <%= link_to "Editar atividade", edit_lesson_path(@lesson), :class => "btn btn-orange mx-2" %>
+    <%= link_to "Voltar", lessons_path, :class => "btn btn-orange mx-2" %>
+
+    <%= button_to "Apagar atividade", @lesson, method: :delete, :class => "btn btn-danger mt-5" %>
+  </div>
+</div>

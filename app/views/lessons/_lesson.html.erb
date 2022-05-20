@@ -1,0 +1,32 @@
+<div id="<%= dom_id lesson %>">
+  <p>
+    <strong>Título:</strong>
+    <%= lesson.title %>
+  </p>
+
+  <p>
+    <strong>Descrição:</strong>
+    <%= lesson.description %>
+  </p>
+
+  <p>
+    <strong>Data de entrega:</strong>
+    <%= lesson.delivery_date.strftime("%d/%m/%Y") %>
+  </p>
+
+  <p>
+    <strong>Bimestre:</strong>
+    <%= lesson.bimester %>º
+  </p>
+
+  <p>
+    <strong>Disciplina:</strong>
+    <%= lesson.subject.name %>
+  </p>
+
+  <p>
+    <strong>Turma:</strong>
+    <%= lesson.subject.classroom.name %>
+  </p>
+
+</div>

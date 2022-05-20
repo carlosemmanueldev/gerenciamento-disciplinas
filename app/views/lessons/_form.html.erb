@@ -1,0 +1,42 @@
+<%= form_with(model: lesson, class: "d-flex flex-column align-items-center") do |form| %>
+  <% if lesson.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(lesson.errors.count, "error") %> foram encontrados:</h2>
+
+      <ul>
+        <% lesson.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-3">
+    <%= form.label :title, "Título", style: "display: block" %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :description, "Descrição", style: "display: block" %>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :delivery_date, "Data de entrega", style: "display: block" %>
+    <%= form.date_select :delivery_date, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :bimester, "Bimestre", style: "display: block" %>
+    <%= form.text_field :bimester, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :subject_id, "Disciplina", style: "display: block" %>
+    <%= collection_select(:lesson, :subject_id, Subject.all, :id, :name, {:prompt => 'Selecione'} ) %>
+  </div>
+
+  <div>
+    <%= form.submit id:"submit", class: "btn btn-orange" %>
+  </div>
+<% end %>
