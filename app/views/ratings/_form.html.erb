@@ -13,12 +13,12 @@
 
   <div class="mb-3">
     <%= form.label :lesson_id, "Atividade", style: "display: block" %>
-    <%= collection_select(:rating, :lesson_id, Lesson.all, :id, :title, {:prompt => 'Selecione'} ) %>
+    <%= collection_select(:rating, :lesson_id, Lesson.where(:subject_id => current_user.subjects), :id, :title, {:prompt => 'Selecione'} ) %>
   </div>
 
   <div class="mb-3">
     <%= form.label :student_id, "Estudante", style: "display: block" %>
-    <%= collection_select(:rating, :student_id, Student.all, :id, :name, {:prompt => 'Selecione'} ) %>
+    <%= collection_select(:rating, :student_id, Student.where(:classroom_id => current_user.classrooms), :id, :name, {:prompt => 'Selecione'} ) %>
   </div>
 
   <div class="my-3">

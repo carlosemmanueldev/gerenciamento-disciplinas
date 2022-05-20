@@ -33,7 +33,7 @@
 
   <div class="mb-3">
     <%= form.label :subject_id, "Disciplina", style: "display: block" %>
-    <%= collection_select(:lesson, :subject_id, Subject.all, :id, :name, {:prompt => 'Selecione'} ) %>
+    <%= collection_select(:lesson, :subject_id, Subject.where(:classroom_id => current_user.classrooms), :id, :name, {:prompt => 'Selecione'} ) %>
   </div>
 
   <div>

@@ -3,8 +3,8 @@
 
   <div>
     <%= link_to "Editar usuário", edit_user_path(@user), :class => "btn btn-orange mx-2" %>
-    <%= link_to "Disciplinas", subjects_path(@user), :class => "btn btn-orange mx-2" %>
     <%= link_to "Turmas", classrooms_path(@user), :class => "btn btn-orange mx-2" %>
+    <%= link_to "Disciplinas", subjects_path(@user), :class => "btn btn-orange mx-2" %>
     <%= link_to "Alunos", students_path(@user), :class => "btn btn-orange mx-2" %>
     <%= link_to "Atividades", lessons_path(@user), :class => "btn btn-orange mx-2" %>
     <%= link_to "Avaliações", ratings_path(@user), :class => "btn btn-orange mx-2" %>
