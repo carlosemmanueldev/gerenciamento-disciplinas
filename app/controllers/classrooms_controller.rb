@@ -4,7 +4,7 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms or /classrooms.json
   def index
-    @classrooms = Classroom.all
+    @classrooms = current_user.classrooms
   end
 
   # GET /classrooms/1 or /classrooms/1.json
@@ -22,7 +22,7 @@ class ClassroomsController < ApplicationController
 
   # POST /classrooms or /classrooms.json
   def create
-    @classroom = Classroom.new(classroom_params)
+    @classroom = current_user.classrooms.new(classroom_params)
 
     respond_to do |format|
       if @classroom.save
@@ -59,13 +59,14 @@ class ClassroomsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_classroom
-      @classroom = Classroom.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def classroom_params
-      params.require(:classroom).permit(:school_year, :letter, :year)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_classroom
+    @classroom = current_user.classrooms.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def classroom_params
+    params.require(:classroom).permit(:school_year, :letter, :year, :user_id)
+  end
 end

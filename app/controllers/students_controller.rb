@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
 
   # GET /students or /students.json
   def index
-    @students = Student.all
+    @students = current_user.students
   end
 
   # GET /students/1 or /students/1.json
@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
 
   # POST /students or /students.json
   def create
-    @student = Student.new(student_params)
+    @student = current_user.students.new(student_params)
 
     respond_to do |format|
       if @student.save
@@ -62,7 +62,7 @@ class StudentsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_student
-    @student = Student.find(params[:id])
+    @student = current_user.students.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.

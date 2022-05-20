@@ -4,7 +4,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects or /subjects.json
   def index
-    @subjects = Subject.all
+    @subjects = current_user.subjects
   end
 
   # GET /subjects/1 or /subjects/1.json
@@ -13,7 +13,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/new
   def new
-    @subject = current_user.subjects.new
+    @subject = Subject.new
   end
 
   # GET /subjects/1/edit
@@ -67,6 +67,6 @@ class SubjectsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def subject_params
-    params.require(:subject).permit(:name, :year, :user_id, :classroom_id)
+    params.require(:subject).permit(:name, :year, :classroom_id)
   end
 end

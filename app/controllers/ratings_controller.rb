@@ -4,7 +4,7 @@ class RatingsController < ApplicationController
 
   # GET /ratings or /ratings.json
   def index
-    @ratings = Rating.all
+    @ratings = current_user.ratings
   end
 
   # GET /ratings/1 or /ratings/1.json
@@ -22,7 +22,7 @@ class RatingsController < ApplicationController
 
   # POST /ratings or /ratings.json
   def create
-    @rating = Rating.new(rating_params)
+    @rating = current_user.ratings.new(rating_params)
 
     respond_to do |format|
       if @rating.save
@@ -62,7 +62,7 @@ class RatingsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_rating
-    @rating = Rating.find(params[:id])
+    @rating = current_user.ratings.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.

@@ -4,7 +4,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons or /lessons.json
   def index
-    @lessons = Lesson.all
+    @lessons = current_user.lessons
   end
 
   # GET /lessons/1 or /lessons/1.json
@@ -26,7 +26,7 @@ class LessonsController < ApplicationController
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to lesson_url(@lesson), notice: "Lesson was successfully created." }
+        format.html { redirect_to lesson_url(@lesson), notice: "A atividade foi criada com sucesso!" }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class LessonsController < ApplicationController
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
-        format.html { redirect_to lesson_url(@lesson), notice: "Lesson was successfully updated." }
+        format.html { redirect_to lesson_url(@lesson), notice: "A atividade foi atualizada com sucesso!" }
         format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class LessonsController < ApplicationController
     @lesson.destroy
 
     respond_to do |format|
-      format.html { redirect_to lessons_url, notice: "Lesson was successfully destroyed." }
+      format.html { redirect_to lessons_url, notice: "A atividade foi apagada com sucesso!" }
       format.json { head :no_content }
     end
   end
@@ -62,7 +62,7 @@ class LessonsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_lesson
-    @lesson = Lesson.find(params[:id])
+    @lesson = current_user.lessons.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
