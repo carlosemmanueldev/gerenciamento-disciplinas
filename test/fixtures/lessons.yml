@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  delivery_date: 2022-05-17
+  bimester: 1
+
+two:
+  title: MyString
+  description: MyText
+  delivery_date: 2022-05-17
+  bimester: 1
