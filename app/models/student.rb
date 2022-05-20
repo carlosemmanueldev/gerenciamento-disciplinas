@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
   belongs_to :classroom
-  has_many :subjects
+  has_many :subjects, through: :classroom
   has_many :ratings
 
   validates :name, presence: true, length: { minimum: 3 }, format: { with: /\A[a-zA-Z\s]+\z/, message: 'Somente letras são permitidas.' }

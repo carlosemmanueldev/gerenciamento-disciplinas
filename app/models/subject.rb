@@ -1,5 +1,4 @@
 class Subject < ApplicationRecord
-  belongs_to :user
   belongs_to :classroom
   has_many :students, through: :classroom
   has_many :lessons, dependent: :destroy
