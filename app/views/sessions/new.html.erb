@@ -1,0 +1,22 @@
+<div class="row mt-5 pt-5">
+  <div class="col-md-6 text-center">
+    <%= image_tag("logo.png", width: "500px") %>
+  </div>
+
+  <div class="col-md-6 align-self-center">
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+
+      <%= f.email_field :email, class: 'form-control mb-2', placeholder: "E-mail" %>
+
+      <%= f.password_field :password, class: 'form-control', placeholder: "Senha" %>
+
+      <div class="text-center border-bottom pb-5">
+        <%= f.submit "Entrar", class: "mt-3 btn btn-orange" %>
+      </div>
+      <div class="text-center mt-5">
+        <%= link_to "Cadastrar-se", new_user_path, class: "btn btn-green" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
