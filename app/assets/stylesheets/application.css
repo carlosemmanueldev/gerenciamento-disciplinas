@@ -15,28 +15,28 @@
  */
 
 nav {
-    background-color: #F14902;
-    position: fixed;
-    height: 100px;
-    top: 0;
-    width: 100%;
-    border-bottom: 1px solid;
-    border-color: #ab3500;
-    z-index: 100;
-    transition: all .15s ease-in;
+  background-color: #f14902;
+  position: fixed;
+  height: 100px;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid;
+  border-color: #ab3500;
+  z-index: 100;
+  transition: all 0.15s ease-in;
 }
 
 body {
-    background-color: #1C191A;
-    color: white;
+  background-color: #1c191a;
+  color: white;
 }
 
 .btn-orange {
-    background-color: #F14902;
-    color: white;
+  background-color: #f14902;
+  color: white;
 }
 
 .btn-green {
-    background-color: green;
-    color: white;
+  background-color: green;
+  color: white;
 }
