@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h1>Estudantes</h1>
+
+  <%= link_to "Cadastrar Estudante", new_student_path, :class => "btn btn-orange my-5" %>
+
+  <div id="students">
+    <% @students.each do |student| %>
+      <div class="d-flex justify-content-center border m-2">
+        <div class="m-2">
+          <%= render student %>
+        </div>
+
+        <div class="m-2">
+          <%= link_to "Ver estudante", student, :class => "btn btn-orange" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

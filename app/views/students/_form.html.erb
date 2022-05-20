@@ -1,0 +1,33 @@
+<%= form_with(model: student, class: "d-flex flex-column align-items-center") do |form| %>
+  <% if student.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% student.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-3">
+    <%= form.label :name, "Nome", style: "display: block" %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :document, "CPF" %>
+    <em>(apenas números)</em><br/>
+    <%= form.text_field :document, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :classroom_id, "Turma", style: "display: block" %>
+    <%= collection_select(:student, :classroom_id, Classroom.all, :id, :name, {:prompt => 'Selecione'} ) %>
+  </div>
+
+  <div>
+    <%= form.submit id:"submit", class: "btn btn-orange" %>
+  </div>
+<% end %>
