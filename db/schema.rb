@@ -15,8 +15,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_015611) do
     t.string "school_year"
     t.string "letter"
     t.integer "year"
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_classrooms_on_user_id"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -53,12 +55,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_015611) do
   create_table "subjects", force: :cascade do |t|
     t.string "name"
     t.integer "year"
-    t.integer "user_id", null: false
     t.integer "classroom_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["classroom_id"], name: "index_subjects_on_classroom_id"
-    t.index ["user_id"], name: "index_subjects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,10 +69,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_015611) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "classrooms", "users"
   add_foreign_key "lessons", "subjects"
   add_foreign_key "ratings", "lessons"
   add_foreign_key "ratings", "students"
   add_foreign_key "students", "classrooms"
   add_foreign_key "subjects", "classrooms"
-  add_foreign_key "subjects", "users"
 end
