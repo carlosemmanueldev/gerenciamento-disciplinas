@@ -1,0 +1,20 @@
+<div class="text-center">
+  <h1>Turmas</h1>
+
+  <%= link_to "Cadastrar turma", new_classroom_path, :class => "btn btn-orange my-5" %>
+
+  <div id="classrooms">
+    <% @classrooms.each do |classroom| %>
+      <div class="d-flex justify-content-center border m-2">
+        <div class="m-2">
+          <%= render classroom %>
+        </div>
+
+        <div class="m-2">
+          <%= link_to "Ver turma", classroom, :class => "btn btn-orange" %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>

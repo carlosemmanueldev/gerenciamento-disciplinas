@@ -1,0 +1,10 @@
+<div class="text-center">
+  <%= render @classroom %>
+
+  <div>
+    <%= link_to "Editar turma", edit_classroom_path(@classroom), :class => "btn btn-orange mx-2" %>
+    <%= link_to "Voltar", classrooms_path, :class => "btn btn-orange mx-2" %>
+
+    <%= button_to "Apagar turma", @classroom, method: :delete, :class => "btn btn-danger mt-5" %>
+  </div>
+</div>
