@@ -1,0 +1,10 @@
+<div class="text-center">
+  <%= render @subject %>
+
+  <div>
+    <%= link_to "Editar disciplina", edit_subject_path(@subject), :class => "btn btn-orange mx-2" %>
+    <%= link_to "Voltar", subjects_path, :class => "btn btn-orange mx-2" %>
+
+    <%= button_to "Apagar disciplina", @subject, method: :delete, :class => "btn btn-danger mt-5" %>
+  </div>
+</div>

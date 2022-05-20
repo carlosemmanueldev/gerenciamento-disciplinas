@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h1>Disciplinas</h1>
+
+  <%= link_to "Cadastrar Disciplina", new_subject_path, :class => "btn btn-orange my-5" %>
+
+  <div id="subjects">
+    <% @subjects.each do |subject| %>
+      <div class="d-flex justify-content-center border m-2">
+        <div class="m-2">
+          <%= render subject %>
+        </div>
+
+        <div class="m-2">
+          <%= link_to "Ver disciplina", subject, :class => "btn btn-orange" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
