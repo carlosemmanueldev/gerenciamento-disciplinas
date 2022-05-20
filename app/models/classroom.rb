@@ -4,9 +4,9 @@ class Classroom < ApplicationRecord
   has_many :subjects, dependent: :destroy
   has_many :lessons, through: :subjects
 
-  validates :school_year, presence: true
+  validates :school_year, presence: true, length: { is: 1 }, numericality: { only_integer: true }
   validates :letter, presence: true, length: { is: 1 }, format: { with: /\A[a-zA-Z]+\z/ }
-  validates :year, presence: true
+  validates :year, presence: true, length: { is: 4 }, numericality: { only_integer: true }
 
   before_save :uppercase_letter
 
