@@ -15,7 +15,7 @@ class Rating < ApplicationRecord
   end
 
   def student_is_in_lesson
-    if !lesson.students.include?(student)
+    unless lesson.students.include?(student)
       errors.add(:student, 'O aluno não está na aula')
     end
   end
