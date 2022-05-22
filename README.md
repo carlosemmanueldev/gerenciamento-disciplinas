@@ -25,6 +25,6 @@ escolhendo um aluno que cursa a disciplina, e depois podem ser adicionadas as no
 ### [GitHub Actions](https://github.com/features/actions)
 ### [Heroku](https://www.heroku.com/)
 ## :construction: Status do Projeto
-Em andamento
+Finalizado
 ## :keyboard: Acessando o sistema
-Você poderá fazer Login no sistema com o E-mail *X* e Senha *X*
+Você poderá fazer Login no sistema com o E-mail professor@gmail.com e Senha 123456
