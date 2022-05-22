@@ -25,7 +25,7 @@ Given('uma turma de letra {string}, ano {string} e ano letivo {string} existe') 
   click_on 'submit'
 end
 
-Given('uma disciplina de nome {string}, ano letivo {string} e turma do {string} ano {string} de {string} existe') do |name, year, classroom, string4, string5|
+Given('uma disciplina de nome {string}, ano letivo {string} e turma do {string} existe') do |name, year, classroom|
   visit '/subjects/new'
   expect(page).to have_current_path('/subjects/new')
   fill_in 'Nome', with: name
@@ -39,7 +39,7 @@ Given('eu estou na pagina de cadastro de atividade') do
   expect(page).to have_current_path('/lessons/new')
 end
 
-Given('preencho titulo com {string}, descricao {string}, bimestre {string}, data {string} da disciplina de nome {string} e ano letivo {string}') do |title, description, bimester, date, subject, subject_year|
+Given('preencho titulo com {string}, descricao {string}, bimestre {string}, data {string} da disciplina de nome e ano letivo {string}') do |title, description, bimester, date, subject|
   fill_in 'Título', with: title
   fill_in 'Descrição', with: description
   fill_in 'Bimestre', with: bimester
