@@ -30,10 +30,10 @@ Given('eu estou na pagina de cadastro de disciplina') do
   expect(page).to have_current_path('/subjects/new')
 end
 
-Given('eu preencho o nome com {string}, ano letivo com {string} e seleciono a turma {string} {string} de {string}') do |name, year, school_year, letter, year2|
+Given('eu preencho o nome com {string}, ano letivo com {string} e seleciono a turma do {string}') do |name, year, classroom|
   fill_in 'Nome', with: name
   fill_in 'Ano', with: year
-  select school_year, from: 'Turma'
+  select classroom, from: 'Turma'
 end
 
 When('eu clico em cadastrar disciplina') do
@@ -44,12 +44,12 @@ Then('vejo que a disciplina foi criada com sucesso') do
   expect(page).to have_content('A disciplina foi cadastrada com sucesso!')
 end
 
-Given('a disciplina de nome {string}, ano letivo {string} e turma do {string} ano {string} de {string} existe') do |name, year, school_year, letter, year2|
+Given('a disciplina de nome {string}, ano letivo {string} e turma do {string} existe') do |name, year, classroom|
   visit '/subjects/new'
   expect(page).to have_current_path('/subjects/new')
   fill_in 'Nome', with: name
   fill_in 'Ano', with: year
-  select school_year, from: 'Turma'
+  select classroom, from: 'Turma'
   click_on 'submit'
 end
 
@@ -63,12 +63,6 @@ end
 
 Given('Clico em editar disciplina') do
   click_on 'Editar disciplina'
-end
-
-Given('preencho nome com {string}, ano letivo com {string} e seleciono a turma {string} {string} de {string}') do |name, year, classroom, string, string2|
-  fill_in 'Nome', with: name
-  fill_in 'Ano', with: year
-  select classroom, from: 'Turma'
 end
 
 When('Clico em atualizar a disciplina') do
