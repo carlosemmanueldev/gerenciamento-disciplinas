@@ -53,7 +53,7 @@ Given('a disciplina de nome {string}, ano letivo {string} e turma do {string} ex
   click_on 'submit'
 end
 
-Given('eu estou na pagina da disciplina de nome {string}, ano letivo {string}, turma {string} ano {string} de {string}') do |name, year, school_year, letter, year2|
+Given('eu estou na pagina da disciplina de nome {string}, ano letivo {string}, turma {string} ano {string} de {string}') do |name, _year, _school_year, _letter, _year2|
   visit '/subjects'
   expect(page).to have_current_path('/subjects')
   expect(page).to have_content(name)
