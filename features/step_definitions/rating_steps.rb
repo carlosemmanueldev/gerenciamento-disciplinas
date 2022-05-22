@@ -34,7 +34,7 @@ Given('existe a disciplina de nome {string}, ano letivo {string} e turma do {str
   click_on 'submit'
 end
 
-Given('a atividade de titulo {string}, bimestre {string}, descricao {string}, data {string} da disciplina de nome {string} e ano letivo {string} existe') do |title, bimester, description, date, subject, subject_year|
+Given('a atividade de titulo {string}, bimestre {string}, descricao {string}, data {string} da disciplina de nome {string} e ano letivo {string} existe') do |title, bimester, description, date, subject, _subject_year|
   visit '/lessons/new'
   expect(page).to have_current_path('/lessons/new')
   fill_in 'Título', with: title
@@ -59,7 +59,7 @@ Given('eu estou na pagina de criacao de avaliacao') do
   expect(page).to have_current_path('/ratings/new')
 end
 
-Given('preencho nota com {string}, descrição com {string}, seleciono atividade de titulo {string} e bimestre {string} e seleciono estudante de nome {string}') do |grade, description, lesson, string4, student|
+Given('preencho nota com {string}, descrição com {string}, seleciono atividade de titulo {string} e bimestre {string} e seleciono estudante de nome {string}') do |grade, description, lesson, _string4, student|
   fill_in 'Nota', with: grade
   fill_in 'Descrição', with: description
   select lesson, from: 'Atividade'
