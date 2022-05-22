@@ -22,11 +22,11 @@ class RatingsController < ApplicationController
 
   # POST /ratings or /ratings.json
   def create
-    @rating = current_user.ratings.new(rating_params)
+    @rating = Rating.new(rating_params)
 
     respond_to do |format|
       if @rating.save
-        format.html { redirect_to rating_url(@rating), notice: "Avaliação foi cadastrada com sucesso!" }
+        format.html { redirect_to rating_url(@rating), notice: "A avaliação foi cadastrada com sucesso!" }
         format.json { render :show, status: :created, location: @rating }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class RatingsController < ApplicationController
   def update
     respond_to do |format|
       if @rating.update(rating_params)
-        format.html { redirect_to rating_url(@rating), notice: "Avaliação foi atualizada com sucesso!" }
+        format.html { redirect_to rating_url(@rating), notice: "A avaliação foi atualizada com sucesso!" }
         format.json { render :show, status: :ok, location: @rating }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class RatingsController < ApplicationController
     @rating.destroy
 
     respond_to do |format|
-      format.html { redirect_to ratings_url, notice: "Avaliação foi apagado com sucesso." }
+      format.html { redirect_to ratings_url, notice: "A avaliação foi apagada com sucesso." }
       format.json { head :no_content }
     end
   end
