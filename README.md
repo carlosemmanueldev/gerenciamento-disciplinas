@@ -27,4 +27,4 @@ escolhendo um aluno que cursa a disciplina, e depois podem ser adicionadas as no
 ## :construction: Status do Projeto
 Em andamento
 ## :keyboard: Acessando o sistema
-Você poderá fazer Login no sistema com o E-mail *X* e Senha *X*
+Você poderá fazer Login no sistema com o E-mail professor@gmail.com e Senha 123456
