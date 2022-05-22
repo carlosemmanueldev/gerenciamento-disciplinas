@@ -7,6 +7,10 @@ class Subject < ApplicationRecord
   validates :year, presence: true, length: { is: 4 }, numericality: { only_integer: true }
   validate :year_equal
 
+  def name_year
+    "#{name} - #{year}"
+  end
+
   private
 
   def year_equal
